@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!--    E-Commerce
+    Author: Nicolash, Alex
+    Date:  16/09/2025
+-->
+<title>SwiftStep Project</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Knewave&display=swap" rel="stylesheet">
+
+<style type="text/css">
+    .center { display: block; margin-left: auto; margin-right: auto; }
+
+html, body, header, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+    html, body, header{
+        background-color: rgb(188, 176, 176);
+    background-image: url("images/create a background image good for running shoe website.jpg");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    }	
+    article{
+        background-color: #478ab4;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }	
+    h1{
+        font-family:Boldonse, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        font-size: 50px;
+    }
+  p{
+    font-family: Boldonse, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+  }
+    nav ul {
+  list-style: none;
+  background: black;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  display: block;
+  color: #fff;
+  padding: 15px 45px;
+  text-decoration: none;
+  font-family: Boldonse, Geneva, Tahoma, sans-serif;
+
+}
+nav{
+  width: 100%;
+}
+
+table, th, td {
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  border: 5px solid black;
+  width: 350px;
+  height: auto;
+}
+th, td {
+  padding: 8px;
+}
+img{
+    border: 2px solid black;
+  width: 300px;
+  height: auto;
+}
+h3{
+  font-family: Boldonse, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+th{
+  text-align: center;
+  font-size: 35px;
+  font-family: Boldonse, Geneva, Tahoma, sans-serif;
+  background-color: white;
+}
+td{
+  text-align: center;
+  font-size: 25px;
+  font-family: Boldonse, Geneva, Tahoma, sans-serif;
+}
+.boldonse-regular {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+footer{
+  color: white
+}
+video{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+article{
+  border: 2px solid black;
+  padding: 20px 50px;
+  margin: 10px 100px;
+}
+button{
+  font-family: Boldonse, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input[type="button"], input[type="reset"] {
+  background-color: #4987ae;
+  border: 2px solid black;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 18px;
+  font-family: Boldonse, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  margin: 10px 5px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+input[type="button"]:hover, input[type="reset"]:hover {
+  background-color: #3a6f8a;
+  transform: scale(1.05);
+}
+
+.button-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+table{
+  width: 300px;
+  height: auto;
+  border-collapse: collapse;
+}
+
+.logo{
+  width: 200px;
+  height: auto;
+}
+
+form table {
+    margin-top: 40px; /* Add extra space above the second table */
+  }
+
+footer{
+    background-color: black;
+    margin: 50px, 150px;
+    text-align: center;
+}
+
+#order{
+    text-align: center;
+
+}
+</style>
+
+<!-- from com3105-project.html (duplicate .center removed) -->
+
+<!-- #3 add javascript here -->
+<!-- #3 add javascript here -->
+<script language="JavaScript" type="text/javascript">
+function process() {
+    alert("Execute process()...");
+
+/* #4 add javascript processing here  */
+/* #a. selling 3 items only */
+  var price = [0, 750.00, 800.00, 999.00];
+    var qty = 0;
+    var itemtot = 0;
+    var totsold = 0;
+
+    var i;
+
+    for (i = 1; i <= 3; i++)  {
+        var qtyEl = document.querySelector("#qty" + i);
+        if (!qtyEl) {
+            continue;
+        }
+        qty = parseInt(qtyEl.value, 10);
+        if (isNaN(qty)) {
+            ;
+        } else {
+            itemtot = qty * price[i];
+            var itemTotEl = document.querySelector("#itemtot" + i);
+            if (itemTotEl) itemTotEl.value = itemtot.toFixed(2);
+            totsold += itemtot;
+        }
+    }
+
+    var totsoldEl = document.querySelector("#totsold");
+    if (totsoldEl) totsoldEl.value = totsold.toFixed(2);
+
+  if (totsold > 0) {
+    var aprvlWin = window.open("com3105_approval.html", "approvalWin", "width=800,height=600,scrollbars=yes,resizable=yes");
+  } else {
+        alert("Please enter number of quantity...");
+    }
+
+}
+
+</script>
+
+</head>
+
+<body>
+<header>
+  <h1 style="background-color:#4987ae; text-align:center">SwiftStep Sportswear</h1>
+</header>
+<nav>
+  <ul>
+    <li class="logo">
+        <img class ="logo center" src="images/Logo_for_SwiftStep_Shoe_Brand.png">
+    </li>
+    <li>
+        <a href="#shoes">MID SEASON SALE</a>
+    </li>
+    <li>
+        <a href="#shoes">SHOES</a>
+    </li>
+    <li>
+        <a href="#shoes">MEN</a>
+    </li>
+    <li>
+        <a href="#shoes">WOMEN</a>
+    </li>
+    <li>
+        <a href="#shoes">KIDS</a>
+    </li>
+  </ul>
+</nav>
+
+<section>
+  <video src="videos/running animation.mp4" loop autoplay muted playsinline controls width="800" height="600">Video is not supported.</video>
+
+    <article>
+        <h3>SwiftStep! Online Shop</h3>
+        <p>Our goal is to promote "healthy living" by selling running shoes and athletic wear to the public
+            for a discounted price.</p>
+        <p> All sales Final - No refund or exchange. </p>
+        <p> Once we received your payment, we will contact you for delivery.</p>
+<table>
+  <thead>
+    <tr id="shoes">
+      <th>NIKE</th>
+      <th>ADIDAS</th>
+      <th>HOKA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VOMERO PLUS</td>
+      <td>ADIZERO BOSTON</td>
+      <td>ROCKET X3</td>
+    </tr>
+    <tr>
+      <td><img src="images/Nike_Shoe_With_Background.png" alt="Nike Vomero Plus" width="500" height="500"></td>
+      <td><img src="images/adidas shoes.avif" alt="Adidas Adizero Boston" width="500" height="500"></td>
+      <td><img src="images/hoka shoes.webp" alt="Hoka Rocket X3" width="500" height="500"></td>
+    </tr>
+    <tr>
+      <td>$750</td>
+      <td>$800</td>
+      <td>$999</td>
+    </tr>
+  </tbody>
+</table>
+
+<form>
+<table>
+<tr><th>Item</th><th>Quantity</th><th>Unit Price</th><th>Amount</th></tr>
+
+</tr>
+
+<tr><td>NIKE - VOMERO PLUS</td><td><label for="qty1" class="visually-hidden">Quantity for NIKE - VOMERO PLUS</label><input type="number" id="qty1" min="0" step="1"></td>
+<td>$750</td><td><input type="text" id="itemtot1" readonly></td>
+</tr>
+
+<tr><td>ADIDAS - ADIZERO BOSTON</td><td><label for="qty2" class="visually-hidden">Quantity for ADIDAS - ADIZERO BOSTON</label><input type="number" id="qty2" min="0" step="1"></td>
+<td>$800</td><td><input type="text" id="itemtot2" readonly></td>
+</tr>
+
+<tr><td>HOKA - ROCKET X3</td><td><label for="qty3" class="visually-hidden">Quantity for HOKA - ROCKET X3</label><input type="number" id="qty3" min="0" step="1"></td>
+<td>$999</td><td><input type="text" id="itemtot3" readonly></td>
+</tr>
+
+<tr><td colspan="3">Total Amount Sold: </td><td><input type="text" id="totsold" readonly></td>
+</tr>
+
+</table>
+<br />
+<div class="button-container">
+<input type="reset" value = "Reset" />
+<input type="button" value = "Checkout - Use Paypal" onclick="process()" />
+</div>
+</form>
+    </article>
+</section>
+
+<footer>
+  <p>Contact Us:</p>
+  <p>Nico: s226637@hsu.edu.hk</p>
+  <p>Alex: s226636@hsu.edu.hk</p>
+</footer>
+
+</body>
+</html>
